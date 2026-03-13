@@ -105,10 +105,10 @@ Save plots as `experiment_2a.png`, `experiment_2b.png`, `experiment_2c.png`.
 **Results table:**
 
 | mutation_rate | Final best value | Weight (kg) | Valid? | Shape of curve |
-|--------------|-----------------|-------------|--------|----------------|
-| 0.01         |          75     |    14.9    |   Yes     |   Slow              |
-| 0.05         |         77        |  14.4          |  Yes      |      Fast          |
-| 0.30         |          78       |  14.1           | Yes       |       Gradual         |
+|--------------|-----------------|-------------|--------|----------------  |
+| 0.01         |          75     |    14.9     |   Yes  |   Slow           |
+| 0.05         |         77      |  14.4       |  Yes   |      Fast        |
+| 0.30         |          78     |  14.1       | Yes    |       Gradual    |
 
 **Compare the three plots. What happens when mutation is too low? Too high? (3–4 sentences)**  
 *Hint: Too low = no diversity, may get stuck. Too high = random search. What is the sweet spot?*
