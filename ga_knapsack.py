@@ -125,7 +125,6 @@ def run_ga(
 ):
     """
     Run the Genetic Algorithm to maximise knapsack value.
-
     KEY PARAMETER
     -------------
     mutation_rate : probability of flipping each bit each generation
@@ -218,66 +217,20 @@ if __name__ == "__main__":
     # Run as-is. Do NOT change any parameters here.
     # ==========================================================================
     print("=" * 48)
-    print("  EXPERIMENT 2A - mutation_rate = 0.01")
+    print("  EXPERIMENT 1 - Baseline")
     print("=" * 48)
 
-    chr2a, val2a, vl2a = run_ga(
-    population_size=20, generations=50,
-    crossover_rate=0.8, mutation_rate=0.01,
-    tournament_size=3, seed=42
+    best_chr, best_val, val_log = run_ga(
+        population_size=20, generations=50,
+        crossover_rate=0.8, mutation_rate=0.05,
+        tournament_size=3, seed=42
     )
-
-    weight2a = sum(WEIGHTS[i] for i in range(NUM_ITEMS) if chr2a[i] == 1)
-    valid2a = "Yes" if weight2a <= MAX_WEIGHT else "No"
-
-    print_solution(chr2a)
-    print(f"Final best value: {val2a}")
-    print(f"Weight: {weight2a} kg")
-    print(f"Valid: {valid2a}")
-
-    save_plot(vl2a, "plots/experiment_2a.png", "mutation_rate=0.01")
-
-
-    print("=" * 48)
-    print("  EXPERIMENT 2B - mutation_rate = 0.05")
-    print("=" * 48)
-
-    chr2b, val2b, vl2b = run_ga(
-    population_size=20, generations=50,
-    crossover_rate=0.8, mutation_rate=0.05,
-    tournament_size=3, seed=42
-    )
-
-    weight2b = sum(WEIGHTS[i] for i in range(NUM_ITEMS) if chr2b[i] == 1)
-    valid2b = "Yes" if weight2b <= MAX_WEIGHT else "No"
-
-    print_solution(chr2b)
-    print(f"Final best value: {val2b}")
-    print(f"Weight: {weight2b} kg")
-    print(f"Valid: {valid2b}")
-
-    save_plot(vl2b, "plots/experiment_2b.png", "mutation_rate=0.05")
-
-
-    print("=" * 48)
-    print("  EXPERIMENT 2C - mutation_rate = 0.30")
-    print("=" * 48)
-
-    chr2c, val2c, vl2c = run_ga(
-    population_size=20, generations=50,
-    crossover_rate=0.8, mutation_rate=0.30,
-    tournament_size=3, seed=42
-    )
-
-    weight2c = sum(WEIGHTS[i] for i in range(NUM_ITEMS) if chr2c[i] == 1)
-    valid2c = "Yes" if weight2c <= MAX_WEIGHT else "No"
-
-    print_solution(chr2c)
-    print(f"Final best value: {val2c}")
-    print(f"Weight: {weight2c} kg")
-    print(f"Valid: {valid2c}")
-
-    save_plot(vl2c, "plots/experiment_2c.png", "mutation_rate=0.30")
+    print_solution(best_chr)
+    print(f"  Generations run : {len(val_log)}")
+    print(f"  Value at gen 1  : {val_log[0]}")
+    print(f"  Final best value: {best_val}")
+    save_plot(val_log, "plots/experiment_1.png",
+              "Baseline  mutation_rate=0.05")
     # ==========================================================================
     # EXPERIMENT 2 - Effect of Mutation Rate
     # TODO: Copy this block THREE times below (for 0.01, 0.05, and 0.30).
