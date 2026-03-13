@@ -3,7 +3,7 @@
 
 **Student Name  :** M. Lakshmi Sravya  
 **Student ID    :** 2310040032 
-**Date Submitted:** 10-03-26 
+**Date Submitted:** 10-03-26
 
 ---
 
@@ -62,12 +62,16 @@ python ga_knapsack.py
 | Number of generations |50 |
 | Best value at generation 1 |60 |
 | Final best value |77 |
-| Total weight of best solution (kg) |14.4 |
+| Total weight of best solution (kg) |14.4 / 15.0 kg |
 | Is solution valid (Yes / No) |Yes |
 
 **Copy the printed packing list here:**
 ```
-Best Packing List
+================================================
+  EXPERIMENT 1 - Baseline
+================================================
+
+  Best Packing List
 --------------------------------------
   + Water bottle
   + First aid kit
@@ -80,6 +84,7 @@ Best Packing List
   + Rope (10 m)
   + Sunscreen
   + Power bank
+--------------------------------------
 ```
 
 **Look at `plots/experiment_1.png` and describe what you see (2–3 sentences).**  
